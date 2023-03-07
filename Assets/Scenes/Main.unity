@@ -4060,7 +4060,7 @@ MonoBehaviour:
     spawnDelayLimit: 0.2
     rampingFactor: 1.01
   - name: Basic 2
-    prefab: {fileID: -4411133220676118957, guid: 9976fef156f1f0648a4ba1f220d91951, type: 3}
+    prefab: {fileID: 8567209578322661868, guid: 9976fef156f1f0648a4ba1f220d91951, type: 3}
     startDelay: 20
     spawnDelay: 10
     spawnDelayLimit: 2

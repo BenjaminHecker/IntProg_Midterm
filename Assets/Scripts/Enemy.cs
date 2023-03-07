@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour
     protected float speed;
     protected int health;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         speed = moveSpeed;
         health = maxHealth;

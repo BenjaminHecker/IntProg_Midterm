@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8722251203827445011}
   - component: {fileID: 8722251203827445012}
   - component: {fileID: 8722251203827445009}
-  - component: {fileID: -4411133220676118957}
   - component: {fileID: 2146332446168247379}
+  - component: {fileID: 8567209578322661868}
   m_Layer: 0
-  m_Name: EnemyBasic 2
+  m_Name: EnemyHealer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,20 +108,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-4411133220676118957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8722251203827445014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 335840e0ce97f054390598e8e1cb970e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  maxHealth: 80
 --- !u!136 &2146332446168247379
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -136,3 +122,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8567209578322661868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722251203827445014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7277783814e925478996d73b9489317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  maxHealth: 80
+  healFactor: 5
+  healRate: 1
