@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
-    private void Update()
+    public void Quit()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
-            Application.Quit();
+        Application.Quit();
     }
 
     public void PlayGame()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
