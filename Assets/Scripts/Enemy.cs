@@ -7,12 +7,17 @@ using UnityEngine.AI;
 public abstract class Enemy : MonoBehaviour
 {
     protected NavMeshAgent nav;
-    [SerializeField] protected float speed = 1f;
+    [SerializeField] protected float moveSpeed = 1f;
+    [SerializeField] protected int maxHealth = 100;
 
-    [SerializeField] protected int health = 100;
+    protected float speed;
+    protected int health;
 
     private void Awake()
     {
+        speed = moveSpeed;
+        health = maxHealth;
+
         nav = GetComponent<NavMeshAgent>();
         nav.speed = speed;
     }

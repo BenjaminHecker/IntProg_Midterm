@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnEnemy(EnemyData data)
     {
-        Enemy enemy = Instantiate(data.prefab, enemyStart.position, Quaternion.identity);
+        Enemy enemy = Instantiate(data.prefab, enemyStart.position + Vector3.right * Random.Range(-1f, 1f), Quaternion.identity);
         enemy.SetDestination(enemyGoal.position);
     }
 }

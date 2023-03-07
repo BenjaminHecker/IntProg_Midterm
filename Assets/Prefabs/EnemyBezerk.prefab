@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8722251203827445011}
   - component: {fileID: 8722251203827445012}
   - component: {fileID: 8722251203827445009}
-  - component: {fileID: -4411133220676118957}
+  - component: {fileID: 639181292478112934}
   - component: {fileID: 2146332446168247379}
   m_Layer: 0
-  m_Name: EnemyLvl1 1
+  m_Name: EnemyBezerk
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a79664d69865a1b40b9a54bca57f980f, type: 2}
+  - {fileID: 2100000, guid: a2ab8ff8716356747867fafc58c695a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,7 +108,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-4411133220676118957
+--- !u!114 &639181292478112934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,11 +117,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8722251203827445014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 335840e0ce97f054390598e8e1cb970e, type: 3}
+  m_Script: {fileID: 11500000, guid: f7cade288d8920f40b04c24e1753e882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  health: 40
+  moveSpeed: 2
+  maxHealth: 200
+  maxSpeed: 20
 --- !u!136 &2146332446168247379
 CapsuleCollider:
   m_ObjectHideFlags: 0
