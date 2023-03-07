@@ -6,16 +6,55 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform enemyStart;
     [SerializeField] private Transform enemyGoal;
-    [SerializeField] private Enemy prefab_Enemy;
+
+    [System.Serializable]
+    class EnemyData
+    {
+        public string name;
+        public Enemy prefab;
+        public float startDelay;
+        public float spawnDelay;
+        public float spawnDelayLimit;
+        public float rampingFactor;
+
+        [HideInInspector] public float timer;
+    }
+    [SerializeField] private EnemyData[] enemyData;
 
     private void Awake()
     {
-        SpawnEnemy();
+        for (int i = 0; i < enemyData.Length; i++)
+            enemyData[i].timer = 0f;
     }
 
-    private void SpawnEnemy()
+    private void Update()
     {
-        Enemy enemy = Instantiate(prefab_Enemy, enemyStart.position, Quaternion.identity);
+        for (int i = 0; i < enemyData.Length; i++)
+        {
+            EnemyData data = enemyData[i];
+
+            if (Time.time >= data.startDelay)
+            {
+                if (data.timer == 0f)
+                {
+                    SpawnEnemy(data);
+                }
+
+                data.timer += Time.deltaTime;
+
+                if (data.timer >= data.spawnDelay)
+                {
+                    data.timer = 0f;
+                    data.spawnDelay /= data.rampingFactor;
+                    data.spawnDelay = Mathf.Max(data.spawnDelay, data.spawnDelayLimit);
+                }
+            }
+        }
+    }
+
+    private void SpawnEnemy(EnemyData data)
+    {
+        Enemy enemy = Instantiate(data.prefab, enemyStart.position, Quaternion.identity);
         enemy.SetDestination(enemyGoal.position);
     }
 }
